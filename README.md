@@ -57,9 +57,15 @@ To run MuJoCo simulation, a license is required.
 protobuf error
 
 ```
-pip3 install --upgrade protobuf==3.20.0
+pip install --upgrade protobuf==3.20.0
 ```
 
+gym EntryPoint error
+
+```
+pip uninstall gym
+pip install gym==0.22.0
+```
 
 
 ## Citation
