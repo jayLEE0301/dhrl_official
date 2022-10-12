@@ -43,12 +43,13 @@ To run MuJoCo simulation, a license is required.
 ## Citation
 If you find this work useful in your research, please cite:
 ```
-@article{Lee2022dhrl,
+@inproceedings{lee2022graph,
   title={DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning},
-  author={Lee, Seungjae and Kim, Jigang and Jang, Inkyu and Kim, H. Jin},
-  journal={Advances in Neural Information Processing Systems},
-  volume={36},
-  year={2022}
+  author={Lee, Seungjae and Kim, Jigang and Jang, Inkyu and Kim, H Jin},
+  booktitle={Thirty-sixth Conference on Neural Information Processing Systems},
+  pages={},
+  year={2022},
+  organization={}
 }
 ```
 
