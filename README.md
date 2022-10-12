@@ -52,6 +52,16 @@ To run MuJoCo simulation, a license is required.
 ./scripts/AntMazeComplex.sh 0 0
 ```
 
+## Troubleshooting
+
+protobuf error
+
+```
+pip3 install --upgrade protobuf==3.20.0
+```
+
+
+
 ## Citation
 If you find this work useful in your research, please cite:
 ```
