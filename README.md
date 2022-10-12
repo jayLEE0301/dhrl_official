@@ -19,10 +19,22 @@ We present a method of Decoupling Horizons Using a Graph in Hierarchical Reinfor
 
 
 ## Installation
+create conda environment
 ```
 conda create -n dhrl python=3.7
 conda activate dhrl
+```
+
+install pytorch that fits your computer settings.(we used pytorch==1.7.1 and pytorch==1.11.0)
+Then, install additional modules using
+```
 ./install.sh
+```
+
+if permission denied,
+```
+chmod +x install.sh
+chmod +x ./scripts/*.sh
 ```
 
 
