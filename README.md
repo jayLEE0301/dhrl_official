@@ -13,9 +13,9 @@ A link to our paper can be found on [arXiv](https://arxiv.org/abs/2210.05150).
 We present a method of Decoupling Horizons Using a Graph in Hierarchical Reinforcement Learning (DHRL) which can alleviate this problem by decoupling the horizons of high-level and low-level policies and bridging the gap between the length of both horizons using a graph. DHRL provides a freely stretchable high-level action interval, which facilitates longer temporal abstraction and faster training in complex tasks. Our method outperforms state-of-the-art HRL algorithms in typical HRL environments. Moreover, DHRL achieves long and complex locomotion and manipulation tasks.
 
 
-<img width="50%" img src="https://user-images.githubusercontent.com/30570922/195006659-d853bb54-7b3d-4c89-8069-cdeabe5d35bc.gif"><img width="50%" img src="https://user-images.githubusercontent.com/30570922/195007214-c318e489-f788-4c4b-af8e-bd5df564dca4.gif">
+<img width="50%" img src="https://user-images.githubusercontent.com/30570922/197715614-84a6abd0-bb7f-4bbe-9c3a-92ce78d267f0.gif"><img width="50%" img src="https://user-images.githubusercontent.com/30570922/197715628-3d6ee28b-f7dd-4d43-9f94-bb70d433ed00.gif">
 
-
+<img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715659-3c219c68-33b9-41e7-bb39-de192ab8502b.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715667-434be510-5778-4905-820b-9947482fa40d.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715676-c2c45312-9922-4827-9154-f53a007bdeaf.gif"><img width="25%" img src="https://user-images.githubusercontent.com/30570922/197715692-62854f86-7a54-4716-9f5d-67e934609df7.gif">
 
 
 ## Installation
