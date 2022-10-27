@@ -42,7 +42,7 @@ To run MuJoCo simulation, a license is required.
 
 
 ## Usage
-### Trainin and Evaluation
+### Training and Evaluation
 ./scripts/{ENV}.sh {GPU} {SEED}
 ```
 ./scripts/Reacher.sh 0 0
