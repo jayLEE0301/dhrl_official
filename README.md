@@ -1,4 +1,4 @@
-# DHRL
+# DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning
 This is a PyTorch implementation for our paper: "DHRL: A Graph-Based Approach for Long-Horizon and Sparse Hierarchical Reinforcement Learning" (NeurIPS 2022 Oral designated paper).
 
 By [Seungjae Lee](https://jaylee0301.github.io/), [Jigang Kim](https://jigang.kim), Inkyu Jang, and H. Jin Kim
