@@ -1,6 +1,5 @@
 import numpy as np
 import sys
-from rl import logger
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from rl.algo.core import BaseAlgo
@@ -117,6 +116,7 @@ class Algo(BaseAlgo):
     def collect_experience(self, random_goal= False, act_randomly=False, train_agent=True, graph=False):
         low_ob_list, low_ag_list, low_bg_list, low_a_list = [], [], [], []
         high_ob_list, high_ag_list, high_bg_list, high_a_list = [], [], [], []
+        self.monitor.update_episode()
         observation = self.env.reset()
         self.curr_subgoal = None
         ob = observation['observation']
@@ -211,9 +211,8 @@ class Algo(BaseAlgo):
             her_success = self.run_eval(epoch, use_test_env=True, render=self.args.eval_render)
             print('Epoch %d her eval %.3f'%(epoch, her_success))
             print('Log Path:', self.log_path)
-            logger.record_tabular("Epoch", epoch)
+            # logger.record_tabular("Epoch", epoch)
             self.monitor.store(Success_Rate=her_success)
-            self.log_everything()
             self.save_all(self.model_path)
 
 

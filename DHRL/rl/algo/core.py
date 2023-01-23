@@ -5,8 +5,6 @@ import os
 import os.path as osp
 import sys
 
-from rl import logger
-
 from rl.utils.run_utils import Timer, log_config, merge_configs
 from rl.replay.core import sample_her_transitions
 
@@ -64,7 +62,7 @@ class BaseAlgo:
         self.log_path = osp.join(osp.join(self.args.save_dir, self.args.env_name), args.ckpt_name)
         self.model_path = osp.join(self.log_path, 'state')
         os.makedirs(self.model_path, exist_ok=True)
-        logger.configure(dir=self.log_path, format_strs=["csv", "stdout", "tensorboard"])
+        self.monitor.set_tb(self.log_path)
         config_list = [env_params.copy(), args.__dict__.copy()]
         log_config(config=merge_configs(config_list), output_dir=self.log_path)
     
@@ -113,15 +111,7 @@ class BaseAlgo:
         act = self.low_agent.get_actions(ob, self.curr_subgoal)
         self.way_to_subgoal -= 1
         return act
-    
-    def log_everything(self):
-        for log_name in self.monitor.epoch_dict:
-            log_item = self.monitor.log(log_name)
-            logger.record_tabular(log_name, log_item['mean'])
-        logger.record_tabular('TotalTimeSteps', self.total_timesteps)
-        logger.record_tabular('Time', self.timer.current_time - self.start_time)
-        logger.dump_tabular()
-    
+
     def state_dict(self):
         raise NotImplementedError
     

@@ -2,9 +2,9 @@ import json
 import os
 import os.path as osp
 import time
-
+import datetime
 import numpy as np
-
+from torch.utils.tensorboard import SummaryWriter
 
 def convert_json(obj):
     """ Convert obj to a version which can be serialized with JSON. """
@@ -98,9 +98,17 @@ def statistics_scalar(x):
 
 
 class Monitor:
-    def __init__(self):
+    def __init__(self, max_steps):
         self.epoch_dict = dict()
-    
+        self.episode_call = 0
+        self.max_steps = max_steps
+
+    def update_episode(self):
+        self.episode_call += 1
+
+    def set_tb(self, log_path):
+        self._sw = SummaryWriter(osp.join(log_path, 'tb'))
+
     def store(self, **kwargs):
         for k, v in kwargs.items():
             if not (k in self.epoch_dict.keys()):
@@ -109,6 +117,9 @@ class Monitor:
                 self.epoch_dict[k].extend(v)
             else:
                 self.epoch_dict[k].append(v)
+            if hasattr(v, 'dtype') and v.ndim != 0 and len(v) > 1:
+                v = np.mean(v)
+            self._sw.add_scalar(k, v, self.episode_call * self.max_steps)
     
     def log(self, key):
         v = self.epoch_dict[key]

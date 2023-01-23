@@ -53,7 +53,7 @@ def launch(args):
     env_params = get_env_params(env, args)
     low_reward_func = env.low_reward_func
     high_reward_func = env.high_reward_func
-    monitor = Monitor()
+    monitor = Monitor(args.max_steps)
 
 
     ckpt_name = args.ckpt_name
